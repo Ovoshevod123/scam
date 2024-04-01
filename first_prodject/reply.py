@@ -1,20 +1,19 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, KeyboardButtonPollType, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
-from aiogram.utils.keyboard import ReplyKeyboardBuilder
+from aiogram.types import Message, KeyboardButton, ReplyKeyboardRemove, \
+    KeyboardButtonPollType, InlineKeyboardButton, InlineKeyboardMarkup, \
+    CallbackQuery
 from aiogram import F, Router
 
-rt = Router
+rt_2 = Router()
 
-button1 = InlineKeyboardButton(text='a', callback_data='a')
-button2 = InlineKeyboardButton(text='s', callback_data='s')
-button3 = InlineKeyboardButton(text='d', callback_data='d')
+top = InlineKeyboardButton(text='Пополнение', callback_data='top')
+withdraw = InlineKeyboardButton(text='Вывод', callback_data='withdraw')
+currency = InlineKeyboardButton(text='Настройка валюты', callback_data='currency')
 button4 = InlineKeyboardButton(text='f', callback_data='f')
 button5 = InlineKeyboardButton(text='g', callback_data='g')
-button_back = InlineKeyboardButton(text='Назад', callback_data='back')
-buttons = [button1, button2, button3, button4, button5, button_back]
-
-@rt.callback_data(F.data == 'a')
-async def callback_a():
-    await callback_query.answer
+id = InlineKeyboardButton(text='Личный кабинет', callback_data='id')
+course = InlineKeyboardButton(text='Курс валют', callback_data='course')
+button_back = InlineKeyboardButton(text='Главное меню', callback_data='menu')
+buttons = [id, course, button_back, top, withdraw, currency, button5]
 
 # start_kb = ReplyKeyboardBuilder()
 # start_kb.add(
